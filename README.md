@@ -53,7 +53,7 @@ Una API REST se centra en las entidades de negocio (datos) expuestos como recurs
 
 Anatomía de una url
 ```
-https://afiliaciones.sancorsalud.com.ar:8080/v1/afiliados/1001/personas?nombre=Juan&apellido=Perez&edad=41
+https://afiliaciones.empresa.com.ar:8080/v1/afiliados/1001/personas?nombre=Juan&apellido=Perez&edad=41
 
 protocolo://sub-dominio.dominio:puerto/api-version/recurso/id-recurso/sub-recurso?filtro1=arg1&filtro2=arg2&filtro3=arg3
 ```
@@ -173,13 +173,13 @@ Incorrecto:
         {
             "tipo": "E",
             "caracteristica": "",
-            "descripcion": "yamilamartino8@gmail.com",
+            "descripcion": "some@example.com",
             "factura_por_email": "S",
             "codigo": 2
         },{
             "tipo": "E",
             "caracteristica": "",
-            "descripcion": "yamilamartino8@hotmail.com",
+            "descripcion": "some@example.com",
             "factura_por_email": "N",
             "codigo": 4
         }
@@ -212,13 +212,13 @@ Correcto:
         {
             "tipo": "E",
             "caracteristica": "",
-            "descripcion": "yamilamartino8@gmail.com",
+            "descripcion": "some@example.com",
             "factura_por_email": "S",
             "codigo": 2
         },{
             "tipo": "E",
             "caracteristica": "",
-            "descripcion": "yamilamartino8@hotmail.com",
+            "descripcion": "some@example.com",
             "factura_por_email": "N",
             "codigo": 4
         }
@@ -234,11 +234,8 @@ Incorrecto:
 ```json
 {
     "recordTypeId": "0124x000000q1xjAAA",
-    "tipoDeAsociado": "Linea individual",
     "condicionIVA": "Consumidor final",
-    "convenio": "Mutual",
     "numeroDeDocumento": "123",
-    "condicionDeContratacion": "Gravado",
     "fechaNacimiento": "1990-01-22",
     "cuil": "20337873101",
     "fechaDeAlta": "2020-07-24",
@@ -259,11 +256,8 @@ Correcto:
 ```json
 {
     "record_type_id": "0124x000000q1xjAAA",
-    "tipo_de_asociado": "Linea individual",
     "condicion_iva": "Consumidor final",
-    "convenio": "Mutual",
     "numero_de_documento": "123",
-    "condicion_de_contratacion": "Gravado",
     "fecha_nacimiento": "1990-01-22",
     "cuil": "20337873101",
     "fecha_de_alta": "2020-07-24",
@@ -326,15 +320,15 @@ Excepción: Esta regla no se aplica a los valores que distinguen entre mayúscul
 Los nombres de host en las APIs deberían ajustarse a la nomenclatura funcional dependiendo del público como sigue:
 
 ```
-<functional-hostname> = <functional-name>.sancorsalud.com.ar
+<functional-hostname> = <functional-name>
 ```
 Incorrecto:
 ```
-http://serviciosjbosstest.ams.red:8080/Afiliaciones/api
+http://servicios.red:8080/Afiliaciones/api
 ```
 Correcto:
 ```
-https://afiliaciones.sancorsalud.com.ar
+https://afiliaciones.empresa.com.ar
 ```
 
 ## 2. DEBE utilizar nombres en minúsculas con guiones para URI/URL
@@ -345,14 +339,14 @@ Incorrecto:
 ```
 /SalesForce/Products/{product-id}
 
-/Abacom/ClientesPotenciales/{cliente-potencial-id}
+/Afiliaciones/ClientesPotenciales/{cliente-potencial-id}
 ```
 
 Correcto:
 ```
 /salesforce/products/{product-id}
 
-/abacom/clientes-potenciales/{cliente-potencial-id}
+/afiliaciones/clientes-potenciales/{cliente-potencial-id}
 ```
 Esto se aplica a los segmentos de la ruta únicamente y no a los nombres de los parámetros de cosulta (utilizan snake_case).
 
