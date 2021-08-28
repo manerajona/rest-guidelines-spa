@@ -106,9 +106,7 @@ Seguir como regla general el sigiente pattern: ```{api-version}/{nombre-aplicaci
 
 > Una URI debe representar inequívocamente a un recurso, NO UNA ACCIÓN.
 
-Por eso, evitar colocar en POST -/-> "/crear", en PATCH -/-> "/actualizar", en delete -/->"/borrar" o en GET -/-> "/buscar". Ésto debe quedar implícito por la URI y el tipo de método que se utiliza.
-
-NOTA: Se agrega el **nombre de la aplicación** para identificar en el bff si se está llamando a Salesforce o los sistemas legados de Fluir.
+Por eso, evitar colocar en POST "/crear", en PATCH "/actualizar", en DELETE "/borrar" o en GET "/buscar". Ésto debe quedar implícito por la URI y el tipo de método que se utiliza.
 
 ## 2. DEBE existir una correlación uniforme entre Método y Status code
 
