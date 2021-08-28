@@ -98,7 +98,7 @@ https://martinfowler.com/articles/richardsonMaturityModel.html
 - Fielding Dissertation: Architectural Styles and the Design of Network-Based Software Architectures: 
 https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm
 
-# Lineamientos generales
+# Lineamientos generales del proyecto
 
 ## 1. DEBE mantener las URI lo más representativas posible
 
