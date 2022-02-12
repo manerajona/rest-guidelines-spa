@@ -85,7 +85,8 @@ Los fields son los valores que pueden variar entre peticiones. Existen tres tipo
 - **Nivel 2** = Verbos HTTP como operaciones Curl.
 - **Nivel 3** = Conocido como "La gloria de REST" o bajo el acrónimo HATEOAS, en dónde los recursos se relacionan por medio de links (Hypertext o URIs) incluidos en el payload.
 
-![rmm.png](/rmm.png)
+![imagen](https://user-images.githubusercontent.com/21185543/153718711-3e12430e-f2dd-4596-8461-3273d7d4c096.png)
+
 
 Algunas lecturas interesantes sobre el estilo de diseño de la API RESTful y la arquitectura de los servicios:
 
