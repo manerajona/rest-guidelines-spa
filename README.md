@@ -100,9 +100,9 @@ https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm
 
 # Lineamientos generales del proyecto
 
-## 1. DEBE mantener las URI lo más representativas posible
+## 1. DEBE mantener las URI lo más representativas posible identificando RECURSOS
 
-Seguir como regla general el sigiente pattern: ```{api-version}/{nombre-aplicación}/{nombre-del-recurso-en-plural}/{id-recurso}```
+Seguir como regla general el sigiente pattern: ```{api-version}/{nombre-del-recurso-en-plural}/{id-recurso}```
 
 > Una URI debe representar inequívocamente a un recurso, NO UNA ACCIÓN.
 
@@ -133,8 +133,6 @@ Como regla general si existe una mayúscula en la url o en los campos del body (
 ## 4. DEBE proporcionar la especificación de la API utilizando OpenAPI 3
 
 Utilizamos la especificación OpenAPI como estándar para definir nuestras APIs. Los diseñadores de la API deberían proporcionar la especificación de sus API utilizando un único documento autocontenido (como Swagger). Animamos a utilizar la versión 3.0 de OpenAPI: [OpenApi Specification](https://swagger.io/specification/).
-
-Sugerencia: Una buena manera de explorar OpenAPI es navegar a través del [mapa mental de la especificación OpenAPI](https://openapi-map.apihandyman.io/) y el plugin Swagger para IntelliJ IDEA para crear su primera API: [Swagger Zalando](https://plugins.jetbrains.com/search?search=swagger%20Monte).
 
 ## 5. DEBERÍA proporcionar el manual de usuario de la API
 
