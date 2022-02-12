@@ -482,20 +482,32 @@ Excepción: En algunas situaciones el identificador de recurso no se pasa como u
 
 Para simplificar el encoding de los identificadores de recursos en las URL, su representación debe consistir únicamente en ASCII que utilicen letras, números, guión bajo, guión medio, dos puntos, punto y -en raras ocasiones- barra invertida (/).
 
+**Standard (safe) characters:**
+```
+0 1 2 3 4 5 6 7 8 9
+a b c d e f g h I j k l m n o p q r s t u v w x y z
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+```
+
+**SAFE Special characters:**
+``` – _ . + ! * ‘ ( ) ```
+
+**UNSAFE Special characters:**
+```[ ] { } | \ ” % ~ # < >```
+
 Incorrecto:
 ```
 PATCH /salesforce/accounts?dni={dni} # está bien para filtrar pero NO PARA IDENTIFICAR UN RECURSO
-PATCH /salesforce/accounts/dni|{dni}
-PATCH /salesforce/accounts/dni-->{dni}
-PATCH /salesforce/accounts/dni👉{dni} # algún día en UTF-8 porque no...
+PATCH /salesforce/accounts/dni/{dni} # está bien para identificar subrecursos
+PATCH /salesforce/accounts/dni->{dni} # evitar usar caracteres inseguros (unsafe)
+PATCH /salesforce/accounts/dni|{dni} # evitar usar caracteres inseguros (unsafe)
 ```
 Correcto:
 ```
-PATCH /salesforce/accounts/dni:{dni}
 PATCH /salesforce/accounts/dni.{dni}
 PATCH /salesforce/accounts/dni_{dni}
 PATCH /salesforce/accounts/dni-{dni}
-PATCH /salesforce/accounts/dni/{dni} # está mal pero no tan mal!!
+PATCH /salesforce/accounts/dni:{dni} # está mal pero no tan mal!!
 ```
 Nota: las barras invertida sólo se permiten para identificar recursos subyacentes.
 
