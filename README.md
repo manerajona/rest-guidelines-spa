@@ -107,7 +107,13 @@ Seguir como regla general el sigiente pattern: ```{api-version}/{nombre-del-recu
 
 > Una URI debe representar inequívocamente a un recurso, NO UNA ACCIÓN.
 
-Por eso, evitar colocar en POST "/crear", en PATCH "/actualizar", en DELETE "/borrar" o en GET "/buscar". Ésto debe quedar implícito por la URI y el tipo de método que se utiliza.
+Evitar colocar para: 
+- POST "/crear" o "/new"
+- PATCH "/actualizar" o "/edit"
+- DELETE "/borrar"
+- GET "/buscar" o "/find". 
+
+Esto debe quedar implícito por la URI y el tipo de método que se utiliza.
 
 ## 2. DEBE existir una correlación uniforme entre Método y Status code
 
@@ -435,6 +441,10 @@ REST tiene que ver con los recursos, así que trata de modelar una API en torno 
 
 Incorrecto:
 ```
+POST /salesforce/accounts/new
+
+PATCH /salesforce/accounts/edit/{id}
+
 PUT /salesforce/productos/bloquear/{id-producto}
 
 GET /salesforce/assets/buscarporproducto
@@ -443,6 +453,10 @@ GET /salesforce/accounts/gettiporegistro
 ```
 Correcto:
 ```
+POST /salesforce/accounts
+
+PATCH /salesforce/accounts/{id}
+
 PUT /salesforce/productos-bloqueados/{id-producto}
 
 GET /salesforce/assets?id_producto={id-producto}
