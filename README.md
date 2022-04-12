@@ -29,21 +29,15 @@ Una API REST se centra en las entidades de negocio (datos) expuestos como recurs
 
 ## VERBOS DE CONTRATO UNIFORME (HTTP/S)
 
-- **GET**: obtiene el recurso (Sólo lectura, Idempotente)
-
-- **HEAD**: como GET pero sólo obtiene los metadatos (Sólo lectura, Idempotente)
-
-- **POST**: crea un nuevo recurso (No-Idempotente)
-
-- **PUT**: crea o actualiza (si no existe) un recurso existente (Idempotente)
-
-- **PATCH**: modifica parcialmente un recurso existente (No-Idempotente)
-
-- **DELETE**: elimina un recurso (Idempotente)
-
-- **TRACE**: se hará eco de la petición recibida. Se utiliza para ver si la solicitud fue alterada por servidores intermedios (proxis).
-
-- **OPTIONS**: devuelve los métodos soportados para una url especificada (Sólo lectura, Idempotente)
+Method  | Description                                                                                                                | Is Idempotent
+------- | -------------------------------------------------------------------------------------------------------------------------- | -------------
+GET     | Retorna el valor actual de(l)(los) recurso(s)                                                                              | True
+PUT     | Remplaza un recurso, o crea uno nuevo si no existe                                                                         | True
+DELETE  | Elimina un recurso                                                                                                         | True
+POST    | Crea un nuevo recurso                                                                                                      | False
+HEAD    | Como GET pero sólo obtiene los metadatos relacionados a un recurso                                                         | True
+PATCH   | Modifica parcialmente un recurso existente                                                                                 | False
+OPTIONS | Devuelve los métodos soportados para una url especificada                                                                  | True
 
 **Métodos idempotentes**: GET, HEAD, PUT, TRACE, OPTIONS.
 	
